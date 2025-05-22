@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 분석 & AI 전문가 포트폴리오</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: scale(1.1);
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 30px;
+            height: calc(100% - 30px);
+            width: 2px;
+            background: #e5e7eb;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #6e8efb;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            width: 28ch;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #6e8efb; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="#" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-gray-500 text-lg">AI Portfolio</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#about" class="py-4 px-2 text-gray-500 font-semibold hover:text-purple-500 transition duration-300">소개</a>
+                    <a href="#skills" class="py-4 px-2 text-gray-500 font-semibold hover:text-purple-500 transition duration-300">기술</a>
+                    <a href="#projects" class="py-4 px-2 text-gray-500 font-semibold hover:text-purple-500 transition duration-300">프로젝트</a>
+                    <a href="#education" class="py-4 px-2 text-gray-500 font-semibold hover:text-purple-500 transition duration-300">교육</a>
+                    <a href="#contact" class="py-4 px-2 text-gray-500 font-semibold hover:text-purple-500 transition duration-300">연락처</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class="w-6 h-6 text-gray-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu">
+            <ul>
+                <li><a href="#about" class="block text-sm px-2 py-4 hover:bg-purple-500 hover:text-white transition duration-300">소개</a></li>
+                <li><a href="#skills" class="block text-sm px-2 py-4 hover:bg-purple-500 hover:text-white transition duration-300">기술</a></li>
+                <li><a href="#projects" class="block text-sm px-2 py-4 hover:bg-purple-500 hover:text-white transition duration-300">프로젝트</a></li>
+                <li><a href="#education" class="block text-sm px-2 py-4 hover:bg-purple-500 hover:text-white transition duration-300">교육</a></li>
+                <li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-purple-500 hover:text-white transition duration-300">연락처</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 typewriter">데이터 분석 & AI 전문가</h1>
+                    <p class="text-xl mb-8">머신러닝과 딥러닝을 활용한 다양한 프로젝트 경험</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">프로젝트 보기</a>
+                        <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition duration-300">연락하기</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="bg-white p-2 rounded-full shadow-xl">
+                        <img src="https://i.ibb.co/BKyQPJcL/image.jpg" alt="프로필 이미지" class="w-64 h-64 rounded-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">저를 소개합니다</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <img src="https://i.ibb.co/BKyQPJcL/image.jpg" alt="프로필 이미지" class="w-48 h-48 rounded-full object-cover shadow-lg">
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        데이터 분석과 인공지능 분야에 열정을 가진 전문가입니다. IM 뱅크 데이터 분석 전문가 양성과정을 수료하고, 현재 메타버스 아카데미 4기 AI 과정을 수강 중입니다. 다양한 산업 분야에서 데이터 분석과 머신러닝, 딥러닝을 적용한 프로젝트를 수행했습니다.
+                    </p>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        최근에는 LLM(대형 언어 모델)을 활용한 혁신적인 프로젝트를 진행하며, AI 기술의 실무 적용에 집중하고 있습니다. 데이터에서 인사이트를 도출하고 이를 비즈니스에 활용하는 것에 큰 흥미를 느끼고 있습니다.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-database mr-2"></i>
+                            <span>데이터 분석</span>
+                        </div>
+                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-brain mr-2"></i>
+                            <span>머신러닝</span>
+                        </div>
+                        <div class="bg-green-100 text-green-800 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-network-wired mr-2"></i>
+                            <span>딥러닝</span>
+                        </div>
+                        <div class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-robot mr-2"></i>
+                            <span>LLM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">보유 기술</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Data Analysis Skills -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-purple-600 mb-4">
+                        <i class="fas fa-chart-bar text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">데이터 분석</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="skill-badge bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Pandas</span>
+                        <span class="skill-badge bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">NumPy</span>
+                        <span class="skill-badge bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">SQL</span>
+                        <span class="skill-badge bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Tableau</span>
+                        <span class="skill-badge bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">A-B test</span>
+                        <span class="skill-badge bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Scipy</span>
+                    </div>
+                </div>
+                
+                <!-- Machine Learning Skills -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-brain text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">머신러닝</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Scikit-learn</span>
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">XGBoost</span>
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">LightGBM</span>
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RandomForest</span>
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CatBoost</span>
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ARIMA</span>
+                    </div>
+                </div>
+                
+                <!-- Deep Learning & LLM Skills -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-green-600 mb-4">
+                        <i class="fas fa-network-wired text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">딥러닝 & LLM</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">CNN</span>
+                        <span class="skill-badge bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">RNN</span>
+                        <span class="skill-badge bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Transformers</span>
+                        <span class="skill-badge bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Hugging Face</span>
+                        <span class="skill-badge bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">LangChain</span>
+                        <span class="skill-badge bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">OpenAI API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Core Tech Stack Section -->
+    <section id="core-tech" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">주요 기술 스택</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="bg-purple-100 text-purple-800 px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:scale-105 transition duration-300">
+                    PyTorch
+                </div>
+                <div class="bg-blue-100 text-blue-800 px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:scale-105 transition duration-300">
+                    Scipy
+                </div>
+                <div class="bg-green-100 text-green-800 px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:scale-105 transition duration-300">
+                    Scikit-learn
+                </div>
+                <div class="bg-yellow-100 text-yellow-800 px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:scale-105 transition duration-300">
+                    Pandas
+                </div>
+                <div class="bg-indigo-100 text-indigo-800 px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:scale-105 transition duration-300">
+                    NumPy
+                </div>
+                <div class="bg-pink-100 text-pink-800 px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:scale-105 transition duration-300">
+                    FastAPI
+                </div>
+                <div class="bg-teal-100 text-teal-800 px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:scale-105 transition duration-300">
+                    Ollama
+                </div>
+            </div>
+        </div>
+</section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">프로젝트</h2>
+            
+            <!-- Data Analysis Projects -->
+            <h3 class="text-2xl font-semibold mb-8 flex items-center">
+                <i class="fas fa-chart-pie text-purple-600 mr-3"></i>
+                데이터 분석 프로젝트
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- E-commerce App Analysis -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl">
+                    <a href="https://www.canva.com/design/DAGMTA_0CMg/PzDhXdM8J08vtyoToBZIfg/view?utm_content=DAGMTA_0CMg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0bb69ebae6"><img src="https://i.ibb.co/qZ5XTsb/2025-05-22-152740.png" alt="이커머스 앱 분석" class="w-full h-48 object-cover"></a>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">이커머스 앱 분석</h4>
+                        <p class="text-gray-600 mb-4">사용자 행동 데이터를 분석하여 전환율 향상을 위한 인사이트 도출</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Pandas</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Tableau</span>
+                        </div>
+                        <button class="view-details-btn text-purple-600 font-semibold text-sm hover:underline" data-project="ecommerce">상세 보기</button>
+                    </div>
+                </div>
+                
+                <!-- Outsourcing Data Analysis -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl">
+                    <a href="https://www.canva.com/design/DAGVMnrtwb4/jsHYb0ygqBNN0ehNb0LZwg/view?utm_content=DAGVMnrtwb4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha88371f0e0"><img src="https://i.ibb.co/5x2yRYpC/image.png" alt="아웃소싱 데이터 분석" class="w-full h-48 object-cover"></a>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">아웃소싱 데이터 분석</h4>
+                        <p class="text-gray-600 mb-4">아웃소싱 업체 데이터를 분석하여 효율성 개선 방안 제시</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">SQL</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Power BI</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Excel</span>
+                        </div>
+                        <button class="view-details-btn text-purple-600 font-semibold text-sm hover:underline" data-project="outsourcing">상세 보기</button>
+                    </div>
+                </div>
+                <!-- Construction Accident Analysis -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl">
+                    <a href="https://www.canva.com/design/DAGPNai2gmE/ewmil-QylbseCMb0r9UovQ/view?utm_content=DAGPNai2gmE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3afce3e7ff"><img src="https://i.ibb.co/8ntPbjYf/image.png" alt="건설 사고 사례 분석" class="w-full h-48 object-cover"></a>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">건설 사고 사례 분석</h4>
+                        <p class="text-gray-600 mb-4">건설 현장 사고 데이터 분석을 통한 안전 대책 수립</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Matplotlib</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Seaborn</span>
+                        </div>
+                        <button class="view-details-btn text-purple-600 font-semibold text-sm hover:underline" data-project="construction">상세 보기</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Machine Learning Projects -->
+            <h3 class="text-2xl font-semibold mb-8 flex items-center">
+                <i class="fas fa-brain text-blue-600 mr-3"></i>
+                머신러닝 프로젝트
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Youth Depression Prediction -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl">
+                    <a href="https://www.canva.com/design/DAGjjZCp2nc/Z4YWTYsJemoSSYoRAUVURQ/view?utm_content=DAGjjZCp2nc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5f0360aa64"><img src="https://i.ibb.co/bgZ8gtyf/image.png" alt="청년 우울증 예측" class="w-full h-48 object-cover"></a>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">청년 우울증 예측</h4>
+                        <p class="text-gray-600 mb-4">설문 데이터를 활용한 청년 우울증 위험군 예측 모델 개발</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Scikit-learn</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">XGBoost</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">SHAP</span>
+                        </div>
+                        <button class="view-details-btn text-blue-600 font-semibold text-sm hover:underline" data-project="depression">상세 보기</button>
+                    </div>
+                </div>
+                
+                <!-- Undervalued Growth Stock Prediction -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl">
+                    <a href="https://www.canva.com/design/DAGOdbf4q7E/OeQHVRgTX4caYPHw27yCyA/view?utm_content=DAGOdbf4q7E&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5ee013ff73"><img src="https://i.ibb.co/d4KZQztJ/image.png" alt="저평가 성장주 예측" class="w-full h-48 object-cover"></a>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">저평가 성장주 예측</h4>
+                        <p class="text-gray-600 mb-4">재무 데이터를 활용한 저평가된 성장주 발굴 모델</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">LightGBM</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Feature Engineering</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Backtesting</span>
+                        </div>
+                        <button class="view-details-btn text-blue-600 font-semibold text-sm hover:underline" data-project="stock">상세 보기</button>
+                    </div>
+                </div>
+                
+                <!-- Agricultural Price Prediction Competition -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl">
+                    <img src="https://i.ibb.co/5Wph9Zt2/image.png" alt="농산물 가격 예측 경진대회" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">농산물 가격 예측 경진대회</h4>
+                        <p class="text-gray-600 mb-4">시계열 데이터를 활용한 농산물 가격 예측 모델 개발</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">LGBM</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">XGBoost</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">LSTM</span>
+                        </div>
+                        <button class="view-details-btn text-blue-600 font-semibold text-sm hover:underline" data-project="agriculture">상세 보기</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Deep Learning Projects -->
+            <h3 class="text-2xl font-semibold mb-8 flex items-center">
+                <i class="fas fa-network-wired text-green-600 mr-3"></i>
+                딥러닝 프로젝트
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Anomaly Behavior Detection -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl">
+                    <a href="https://www.canva.com/design/DAGoJgOZVL8/bTlYC3Jxh8tBVlnwmRD_yA/view?utm_content=DAGoJgOZVL8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf575a46dc1"><img src="https://i.ibb.co/v4yHCNn0/image.png" alt="이상행동 탐지" class="w-full h-48 object-cover"></a>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">이상행동 탐지</h4>
+                        <p class="text-gray-600 mb-4">CCTV 영상을 활용한 이상행동 탐지 시스템 개발</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">TensorFlow</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">CNN</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">OpenCV</span>
+                        </div>
+                        <button class="view-details-btn text-green-600 font-semibold text-sm hover:underline" data-project="anomaly">상세 보기</button>
+                    </div>
+                </div>
+                
+                <!-- Drowsiness Detection -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl">
+                    <a href="https://www.canva.com/design/DAGmFAJIKiU/iTzVYE2OhDHXUwOzwhRc0Q/view?utm_content=DAGmFAJIKiU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h65ce780efa"><img src="https://i.ibb.co/4gdJbM7F/image.png" alt="졸음 탐지" class="w-full h-48 object-cover"></a>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">졸음 탐지</h4>
+                        <p class="text-gray-600 mb-4">실시간 얼굴 인식을 통한 운전자 졸음 탐지 시스템</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">PyTorch</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">MediaPipe</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Flask</span>
+                        </div>
+                        <button class="view-details-btn text-green-600 font-semibold text-sm hover:underline" data-project="drowsiness">상세 보기</button>
+                    </div>
+                </div>
+                
+                <!-- LLM for Coding Test -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl">
+                    <a href="https://www.canva.com/design/DAGnZ9N1oKI/kAcyi34qfkhhMxqtxr6meg/watch?utm_content=DAGnZ9N1oKI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfcfc40fec3"><img src="https://i.ibb.co/hxNYmVh8/image.png" alt="LLM 코딩테스트 문제 생성" class="w-full h-48 object-cover"></a>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">LLM 코딩테스트 문제 생성</h4>
+                        <p class="text-gray-600 mb-4">LLM을 활용한 코딩테스트 문제 및 테스트 케이스 생성 시스템</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Hugging Face</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">LangChain</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">FastAPI</span>
+                        </div>
+                        <button class="view-details-btn text-green-600 font-semibold text-sm hover:underline" data-project="llm">상세 보기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">교육 및 경력</h2>
+            
+            <div class="relative">
+                <!-- IM Bank Data Analysis Course -->
+                <div class="timeline-item mb-8 pl-12 relative">
+                    <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-2">IM 뱅크 데이터분석 전문가 양성과정</h3>
+                        <p class="text-gray-500 mb-2">2024.6 - 2024.12 (6개월)</p>
+                        <p class="text-gray-700">
+                            데이터 분석 기초부터 고급 기법까지 체계적으로 학습. Python, SQL, 데이터 시각화, 머신러닝ㆍ딥러닝 기초 등을 포함한 종합적인 커리큘럼 수료.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Current - Metaverse Academy AI Course -->
+                <div class="timeline-item mb-8 pl-12 relative">
+                    <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-2">메타버스 아카데미 4기 AI 과정</h3>
+                        <p class="text-gray-500 mb-2">2023.01 - 현재 (수강 중)</p>
+                        <p class="text-gray-700">
+                            딥러닝과 LLM(대형 언어 모델)에 중점을 둔 고급 AI 과정. 현재 LLM을 활용한 팀프로젝트 수행 중.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Additional Experience -->
+                <div class="timeline-item mb-8 pl-12 relative">
+                    <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-2">AI 경진대회 참여</h3>
+                        <p class="text-gray-500 mb-2">2024 </p>
+                        <p class="text-gray-700">
+                            데이콘에서 주최한 농산물 가격 예측, 주식 예측 등 다양한 분야의 대회에 도전.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">연락처</h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-6">연락 정보</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">이메일</h4>
+                                <p class="text-gray-600">romantic7391@email.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fab fa-github text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">GitHub</h4>
+                                <p class="text-gray-600">github.com/romantic7391</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                                <i class="fab fa-linkedin text-yellow-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">LinkedIn</h4>
+                                <p class="text-gray-600">www.linkedin.com/in/준엽-이-4a9251332</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-6">메시지 보내기</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">이름</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition duration-300">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">이메일</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition duration-300">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">제목</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition duration-300">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">메시지</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition duration-300"></textarea>
+                        </div>
+                        <button type="submit" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition duration-300 w-full">보내기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 id="modal-title" class="text-2xl font-bold"></h3>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div id="modal-content" class="space-y-4">
+                    <!-- Content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold">AI Portfolio</h3>
+                    <p class="mt-2 text-gray-400">데이터 분석과 AI를 사랑하는 개발자</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 AI Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                mobileMenu.classList.add('hidden');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Project modal functionality
+        const projectModal = document.getElementById('project-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalContent = document.getElementById('modal-content');
+        const closeModal = document.getElementById('close-modal');
+        
+        const projectDetails = {
+            ecommerce: {
+                title: "이커머스 앱 분석",
+                content: `
+                    <img src="https://i.ibb.co/qZ5XTsb/2025-05-22-152740.png" alt="이커머스 앱 분석" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <p class="text-gray-700">
+                        주요 이커머스 앱의 사용자 구매 데이터를 분석하여 전환율 향상을 위한 인사이트를 도출한 프로젝트입니다.
+                    </p>
+                    <h4 class="font-semibold mt-4">주요 성과</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>상품추천 시스템 개발 및 제공</li>
+                        <li>선택 가능한 멤버쉽 서비스 개발</li>
+                        <li>VIP 고객 관리</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">사용 기술</h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Pandas</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Tableau</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">A/B Testing</span>
+                    </div>
+                `
+            },
+            outsourcing: {
+                title: "아웃소싱 데이터 분석",
+                content: `
+                    <img src="https://i.ibb.co/5x2yRYpC/image.png" alt="아웃소싱 데이터 분석" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <p class="text-gray-700">
+                         아웃소싱 업체 데이터를 분석하여 프로젝트 효율성과 수익성을 개선한 프로젝트입니다.
+                    </p>
+                    <h4 class="font-semibold mt-4">주요 성과</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>이탈 판매자 알림 서비스</li>
+                        <li>프로젝트 카테고리 런칭</li>
+                        <li>수수료 개편 및 정보 제공</li>
+                        <li>적정 가격대 정보 제공</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">사용 기술</h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">scipy</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">A/B Testing</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">데이터분석</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">데이터 마이닝</span>
+                    </div>
+                `
+            },
+            construction: {
+                title: "건설 사고 사례 분석",
+                content: `
+                    <img src="https://i.ibb.co/8ntPbjYf/image.png" alt="건설 사고 사례 분석" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <p class="text-gray-700">
+                        건설 현장에서 발생하는 사고 데이터를 분석하여 안전 대책을 수립한 프로젝트입니다.
+                    </p>
+                    <h4 class="font-semibold mt-4">주요 성과</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>안전 수칙 여부 모니터링 시스템 제공</li>
+                        <li>실시간 정보 공유 및 고위험요인 분석 제공</li>
+                        <li>자기 규율 예방 체계 프로세스 확립</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">사용 기술</h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Matplotlib</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Seaborn</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">통계 분석</span>
+                    </div>
+                `
+            },
+            depression: {
+                title: "청년 우울증 예측",
+                content: `
+                    <img src="https://i.ibb.co/bgZ8gtyf/image.png" alt="청년 우울증 예측" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <p class="text-gray-700">
+                        설문 데이터를 활용하여 청년 우울증 위험군을 예측하는 머신러닝 모델을 개발한 프로젝트입니다.
+                    </p>
+                    <h4 class="font-semibold mt-4">주요 성과</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>정확도 84%의 예측 모델 개발</li>
+                        <li>Feature Importances 값을 활용한 주요 영향 변수 식별</li>
+                        <li>Voting을 적용하여 모델 병합</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">사용 기술</h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Scikit-learn</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">XGBoost</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Ensemble</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Feature Importance</span>
+                    </div>
+                `
+            },
+            stock: {
+                title: "저평가 성장주 예측",
+                content: `
+                    <img src="https://i.ibb.co/d4KZQztJ/image.png" alt="저평가 성장주 예측" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <p class="text-gray-700">
+                        재무 데이터를 활용하여 저평가된 성장주를 발굴하는 머신러닝 모델을 개발한 프로젝트입니다.
+                    </p>
+                    <h4 class="font-semibold mt-4">주요 성과</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>3개월 후 수익률 기준 상위 20% 주식 식별 정확도 70% 달성</li>
+                        <li>다양한 재무 지표와 시장 데이터를 활용한 포트폴리오 구성</li>
+                        <li>역대 데이터를 활용한 백테스팅 시스템 구현</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">사용 기술</h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">LightGBM</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Feature Engineering</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">XGBoost</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">재무 분석</span>
+                    </div>
+                `
+            },
+            agriculture: {
+                title: "농산물 가격 예측 경진대회",
+                content: `
+                    <img src="https://i.ibb.co/5Wph9Zt2/image.png" alt="농산물 가격 예측 경진대회" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <p class="text-gray-700">
+                        시계열 데이터를 활용한 농산물 가격 예측 경진대회에 참여한 프로젝트입니다.
+                    </p>
+                    <h4 class="font-semibold mt-4">주요 성과</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>기상 데이터와 역사적 가격 데이터를 활용한 다변량 예측</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">사용 기술</h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">XGBoost</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">LGBM</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">LSTM</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">시계열 분석</span>
+                    </div>
+                `
+            },
+            anomaly: {
+                title: "이상행동 탐지",
+                content: `
+                    <img src="https://i.ibb.co/v4yHCNn0/image.png" alt="이상행동 탐지" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <p class="text-gray-700">
+                        CCTV 영상을 활용하여 이상행동을 탐지하는 딥러닝 기반 시스템을 개발한 프로젝트입니다.
+                    </p>
+                    <h4 class="font-semibold mt-4">주요 성과</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>YOLO 기반 이상 탐지</li>
+                        <li>실시간 처리 가능한 경량화 모델 개발</li>
+                        <li>주요 무인점포에 적용 가능한 시스템 설계</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">사용 기술</h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">TensorFlow</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">CNN</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">OpenCV</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">LSTM</span>
+                    </div>
+                `
+            },
+            drowsiness: {
+                title: "졸음 탐지",
+                content: `
+                    <img src="https://i.ibb.co/4gdJbM7F/image.png" alt="졸음 탐지" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <p class="text-gray-700">
+                        실시간 얼굴 인식을 통한 졸음 탐지 시스템을 개발한 프로젝트입니다.
+                    </p>
+                    <h4 class="font-semibold mt-4">주요 성과</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>눈 깜빡임 빈도와 눈 감김 정도를 통한 졸음 상태 판별</li>
+                        <li>경량화 모델을 활용한 실시간 처리 가능</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">사용 기술</h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">PyTorch</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">MediaPipe</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">LSTM</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">실시간 처리</span>
+                    </div>
+                `
+            },
+            llm: {
+                title: "LLM 코딩테스트 문제 생성",
+                content: `
+                    <img src="https://i.ibb.co/hxNYmVh8/image.png" alt="LLM 코딩테스트 문제 생성" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <p class="text-gray-700">
+                        LLM(대형 언어 모델)을 활용하여 코딩테스트 문제와 테스트 케이스를 생성하고 답안을 판별하는 시스템을 개발한 프로젝트입니다.
+                    </p>
+                    <h4 class="font-semibold mt-4">주요 성과</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>다양한 난이도와 주제의 코딩테스트 문제 자동 생성</li>
+                        <li>생성된 문제에 대한 테스트 케이스 자동 생성</li>
+                        <li>제출된 답안의 정확도와 효율성 평가 시스템 구현</li>
+                    </ul>
+                    <h4 class="font-semibold mt-4">사용 기술</h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Ollama</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">LangChain</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">FastAPI</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">LLM</span>
+                    </div>
+                `
+            }
+        };
+        
+        document.querySelectorAll('.view-details-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const projectId = button.getAttribute('data-project');
+                const project = projectDetails[projectId];
+                
+                modalTitle.textContent = project.title;
+                modalContent.innerHTML = project.content;
+                
+                projectModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            projectModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) {
+                projectModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
